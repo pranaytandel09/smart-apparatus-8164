@@ -1,14 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/index.css">
-    <title>Document</title>
+    <title>Login/Signup Page</title>
+    <style>
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(./background\ \(4\).png);
+    background-repeat: no-repeat;
+    background-position: relative;
+    background-size: cover;
+}
+
+form {
+    margin: 0 auto;
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    margin-top: 100px;
+}
+
+#submit{
+    display: flex;
+    gap: 20px;
+    margin: auto;
+}
+
+button,input{
+    width: 260px;
+    padding: 20px;
+    margin-top: 80px;
+    border-radius: 10px;
+    border: none;
+}
+button{
+    background-color: black;
+    color: white;
+}
+
+    </style>
 </head>
 <body>
-    <!-- for register and login -->
-    <script src="./scripts/index.js"></script>
+    <form>
+            <input type="text" id="username" name="username" placeholder="USERNAME"><br><br>
+            <input type="password" id="password" name="password" placeholder="PASSWORD"><br><br>
+       
+       <div id="submit">
+        <button>SIGNUP</button>
+        <button>LOGIN</button>
+       </div>
+    </form>
 </body>
 </html>
