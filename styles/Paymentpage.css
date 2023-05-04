@@ -1,0 +1,346 @@
+body{
+    padding:0;
+    margin: 0;
+ 
+}
+*{
+    box-sizing: border-box;
+    
+}
+
+#nav{
+width: 100%;
+margin: auto;
+display: flex;
+justify-content: center;
+}
+#parent{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    /* border: 2px solid black; */
+    margin-top: 80px;
+}
+#paymentOptions{
+    /* border: 2px solid black; */
+    width:35%;
+    margin:auto;
+ 
+   justify-items: center;
+}
+.paymentOptionBox{
+    display: flex;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    justify-content: flex-start;
+    background-color: white;
+   
+}
+.optionLogo {
+    margin-right: 10px;
+}
+
+.optionLogo img{
+    /* border: 1px solid red; */
+    width: 45px;
+    border-radius: 50px;
+}
+.paymentInfo a{
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+}
+.paymentInfo h4{
+color: rgb(116, 116, 116);
+}
+#dynamicBox{
+    width:60%;
+    /* border:1px solid red */
+    padding-top: 60px;
+    display: none;
+}
+#box1{
+    display: none;
+    width: 70%;
+    margin: auto;
+   border:1px solid black 
+
+}
+.currencyChange{
+    width: 60%;
+    margin: auto;
+  
+    border: 2px solid red;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#childBox{
+  border: 2px solid black;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background-color: aqua;
+}
+#childBox div{
+  width: 50%;
+  margin: 5px;
+  border: 1px solid blue;
+  background-color: aqua;
+}
+
+#box1 form{
+    text-align: center;
+}
+#box1 input{
+   width: 60%;
+   margin: auto;
+   margin-bottom: 10px;
+   padding: 10px;
+   border-radius: 10px;
+   background-color: white;
+/* color: white; */
+}
+#box1 input:nth-child(5){
+     height: 80px;
+}
+#box2{
+    
+    display: none;
+    width: 70%;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+   /* border:1px solid black  */
+}
+#amountDisplay{
+    width: 30%;
+    margin: auto;
+    margin-top: 80px;
+    margin-bottom: 30px;
+    height: 80px;
+    border: 2px solid red;
+}
+
+.section{
+   display: flex;
+   justify-content: space-between;
+   padding: 20px 20px 20px 20px;
+   /* margin-top: 25px; */
+   /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+   border: 1px solid black;
+   /* border-radius: 15px; */
+}
+/* #box2:last-child{
+    width: 60%;
+    margin: auto;
+    margin-top: 80px;
+    border: 8px solid black;
+} */
+
+#submitBtn2{
+   width: 100%;
+   margin-top: 80px;
+   margin-bottom: 10px;
+   padding: 10px;
+   border-radius: 10px;
+   background-color: white;
+}
+#box3{
+    display: none;
+   /* text-align: center; */
+    /* border: 2px solid black; */
+}
+#box3Header{
+
+width: 20%;
+margin: auto;
+text-align: center;
+}
+#backBtn{
+   padding: 10px;
+    border-radius: 50%;
+    margin-right: 50px;
+    margin-left: 150px;
+    background-color: white;
+    color: black;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+
+
+/* pin authorization section */
+.password-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+  }
+  
+  .password-input {
+    margin-bottom: 10px;
+  }
+  
+  .input-container {
+    position: relative;
+  }
+  
+  .input-container input {
+    padding: 10px 10px 10px 50px;
+    font-size: 18px;
+    text-align: center;
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+    background-color: transparent;
+  }
+  
+  .cursor {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 3px;
+    height: 20px;
+    background-color: #000;
+    animation: blink 0.5s infinite;
+  }
+  
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+  
+  .password-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+  }
+  
+  .password-button {
+    padding: 20px;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #fffefe;
+    /* color: white; */
+    border: 2px solid #ccc;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .password-button:hover {
+    background-color: #f2f2f2;
+  }
+  
+  .password-button.backspace::before {
+    content: "\f060";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 14px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  #box4{
+    display: none;
+    /* border: 2px solid red; */
+    text-align: center;
+    margin-top: -50px;
+}
+  /* ------------------------------------------------ */
+
+  /* css for tick animation to show payment is successfull */
+
+   #tickAnimation{
+
+    /* border: 2px solid black; */
+    margin: auto;
+    margin-top: 80px;
+    
+  }
+  
+ 
+  #tickAnimation {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    transform: scale(0);
+  }
+  
+  #tickAnimation.show {
+    background: rgb(63, 246, 63);
+  animation: tick-animation 0.5s ease-out forwards;
+}
+
+#tickAnimation svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+}
+
+#tickAnimation.show svg {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+@keyframes tick-animation {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+/* -----------------------------------------------------> */
+/* beneficiary dynamicBox1 element */
+#dynamicBox1{
+  width:60%;
+  /* border:1px solid red */
+  padding-top: 60px;
+  /* display: none; */
+
+}
+#sendMoney{
+  border: 1px solid black;
+  text-align: center;
+}
+#sendMoney form{
+  border: 1px solid red;
+  width: 60%;
+  margin: auto;
+padding: 30px;
+}
+#sendMoney form input{
+  width: 60%;
+   margin: auto;
+   margin-bottom: 10px;
+   padding: 10px;
+   border-radius: 10px;
+   background-color: white;
+   margin-top: 20px;
+}
+
+ 
+  
+  
+  
+  
+  
+  

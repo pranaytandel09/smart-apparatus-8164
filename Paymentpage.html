@@ -5,9 +5,182 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/Paymentpage.css">
-    <title>Document</title>
+    <title>Payment Page</title>
 </head>
 <body>
-    <script src="./scripts/Paymentpage.js"></script>
+    <!-- container having different payment options -->
+         
+      <div id="nav">
+    
+        <div id="header1">Send Money</div>
+      </div>
+
+      <div id="parent">
+
+  <!-- container for payment options -->
+  <div id="paymentOptions">
+    <div class="paymentOptionBox">
+     <div class="optionLogo" >
+         <img id="optionLogo1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrfsdWDVErxdbsejWkGgSaHzqG_GSmtAFTXw&usqp=CAU" alt="">
+     </div>
+     <div class="paymentInfo">
+         <a href="" id="optn1"> <b>Send Using Bank Account</b></a>
+        
+         <h4>Send to a Bank Account</h4>
+     </div>
+    </div>
+    <div class="paymentOptionBox">
+     <div class="optionLogo" >
+         <img id="optionLogo2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIw8R2lxSRfxQB1S0AgzQvVuui8BZmqTX5-Q&usqp=CAU" alt="">
+     </div>
+     <div class="paymentInfo">
+       <a href="" id="optn2"><b>Send to a Beneficiary</b></a>
+         <h4>Choose a beneficiary to make a withdrawal</h4>
+     </div>
+    </div>
+    <div class="paymentOptionBox">
+     <div class="optionLogo" ><img id="optionLogo3" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvvPrFFcWy_8TTmxEgmT4UbwegMugaeO9p6A&usqp=CAU" alt=""></div>
+     <div class="paymentInfo">
+     <a href="" id="optn3"><b>Send Using PayWise Tag</b></a>
+         <h4>Send money to your freinds using PayWise</h4>
+     </div>
+    </div>
+
+ </div>
+
+ <!-- container having different payment gateways segments -->
+ <div id="dynamicBox">
+
+    <!-- box1 is the container having segment when user choose "send money by bank account" option -->
+    <div id="box1">
+      <div class="currencyChange">
+        <span>Convert from</span>
+        <div class="childBox">
+          <div>
+            <select name="" id="fromCountries"></select>
+          </div>
+          <div>
+            <input type="number" name="" id="fromCurrency">
+          </div>
+        </div>
+
+        <span>Convert to</span>
+        <div class="childBox">
+          <div>
+            <select name="" id="toCountries"></select>
+          </div>
+          <div>
+            <input type="number" name="" id="toCurrency">
+          </div>
+        </div>
+      </div>
+        <form action="" id="bankDetails">
+            <input type="text" id="bankName" placeholder="Recipient's Bank">
+            <input type="text" id="IFSC" placeholder="IFSC Code">
+            <input type="number" id="accNo" placeholder="Account Number">
+            <input type="text" id="recipientName" placeholder="Recipient's Account Name">
+            <input type="text" placeholder="Description (Optional)">
+            <input type="submit" id="submitBtn1" value="Continue">
+        </form>
+    </div>
+
+    <!-- box2 will be the step2 toward transaction, where it will let the owner review and confirm the payment -->
+      <div id="box2">
+        <h3>Review Your Transaction</h3>
+        <div id="amountDisplay"></div>
+
+        <div id="transactionDetails">
+            <div class="section">
+                <div><b>Amount to Send</b></div>
+                <div>Amount</div>
+            </div>
+            <div class="section">
+                <div><b>Transaction Fees</b></div>
+                <div>None</div>
+            </div>
+        </div>
+
+          <div><button id="submitBtn2" >Make Transfer</button></div>
+       </div>
+
+         <!-- box2 will be the step3 toward transaction, where pass has to be provided -->
+        <div id="box3">
+            <button id="backBtn">←</button>
+          <div id="box3Header">
+            <h3>Enter Pin</h3>
+          </div>
+            <div class="password-container">
+                <div class="password-input">
+                <div class="input-container">
+                    <input type="password" id="password" name="password" readonly maxlength="4">
+                    <div class="cursor"></div>
+                </div>
+                </div>
+                <div class="password-buttons">
+                <button type="button" class="password-button">1</button>
+                <button type="button" class="password-button">2</button>
+                <button type="button" class="password-button">3</button>
+                <button type="button" class="password-button">4</button>
+                <button type="button" class="password-button">5</button>
+                <button type="button" class="password-button">6</button>
+                <button type="button" class="password-button">7</button>
+                <button type="button" class="password-button">8</button>
+                <button type="button" class="password-button">9</button>
+                <button type="button" class="password-button"></button>
+                <button type="button" class="password-button">0</button>
+                <button type="button" class="password-button backspace"></button>
+                </div>
+            </div>
+        </div>
+
+         <!-- box2 will be the step4 toward transaction, to show that transaction is succsessful-->
+        <div id="box4">
+            <h3> Transaction Succesfull!</h3>
+          <div id="tickAnimation">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"/><path d="M8.5 15.1l-3.6-3.6-1.4 1.4 5 5 10-10-1.4-1.4z"/></svg>
+          
+           </div>
+             
+                <div id="amountDisplay"></div>
+        
+                <div id="transactionDetails">
+                    <div class="section">
+                        <div><b>Amount to Send</b></div>
+                        <div>Amount</div>
+                    </div>
+                    <div class="section">
+                        <div><b>Transaction Fees</b></div>
+                        <div>None</div>
+                    </div>
+                </div>
+
+
+         </div>
+
+      </div>
+    
+<!-- <div id="dynamicBox1">
+    <div id="sendMoney">
+        <h2>Send money to a beneficiary</h2>
+        <form>
+          <label for="beneficiary">Select a beneficiary:</label>
+          <select id="beneficiary" required>
+            <option value="">Choose a beneficiary</option>
+          </select>
+          <br>
+          <label for="amount">Amount:</label>
+          <input type="number" id="amount" name="amount" placeholder="Enter amount" required>
+          <br>
+          <button type="submit">Send</button>
+        </form>
+        
+        <div id="beneficiaries">
+          <h3>Beneficiaries</h3>
+          <div id="beneficiaryList"></div>
+        </div>
+      </div>
+</div> -->
+
 </body>
+<script src="./scripts/Paymentpage.js"></script>
 </html>
