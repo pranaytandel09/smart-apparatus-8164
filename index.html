@@ -38,6 +38,28 @@ button{
     color: white;
 }
 
+@media screen and (max-width: 500px){
+    #submit{
+    display: flex;
+    gap: 2px;
+    margin: auto;
+}
+
+button,input{
+    width: 60px;
+    padding: 20px;
+    border-radius: 10px;
+    border: none;
+}
+button{
+    background-color: black;
+    color: white;
+}
+
+body{
+    background-size: fill;
+}
+}
     </style>
 </head>
 <body>
@@ -46,10 +68,11 @@ button{
             <input type="password" id="password" name="password" placeholder="PASSWORD"><br><br>
        
        <div id="submit">
-        <button>SIGNUP</button>
-        <button>LOGIN</button>
+        <button id="signup">SIGNUP</button>
+        <button id="login">LOGIN</button>
        </div>
     </form>
 </body>
 </html>
 
+<script src="./scripts/index.js"></script>
