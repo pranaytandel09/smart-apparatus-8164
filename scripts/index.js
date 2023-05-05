@@ -8,6 +8,7 @@ let username = document.getElementById("username");
 let password = document.getElementById("password");
 
 signupbtn.addEventListener("click",(event)=>{
+    event.preventDefault();
 
     let user = {
         name : username.value,
@@ -17,11 +18,14 @@ signupbtn.addEventListener("click",(event)=>{
     data.push(user);
 
     localStorage.setItem("user-data",JSON.stringify(data));
+
+    alert("Signed Up Successfully. Proceed to Login");
 })
 
 console.log(data);
 
 loginbtn.addEventListener("click",(event)=>{
+    event.preventDefault();
     let flag = false;
     data.map(element => {
         if(username.value == element.name && password.value == element.password){
@@ -31,7 +35,7 @@ loginbtn.addEventListener("click",(event)=>{
 
     if(flag){
         alert("Welcome Onboard !") ;
-        window.location.href = '/Homepage';
+        window.location.href = 'Homepage.html';
     }
     else{
         alert("Wrong Credentials. Enter correct Username or Password");
