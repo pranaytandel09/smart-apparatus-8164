@@ -156,7 +156,7 @@ background-color: white;
     text-align: center;
    /* border:1px solid black  */
 }
-.amountDisplay{
+#amountDisplay{
     width: 70%;
     margin: auto;
     margin-top: 20px;
@@ -164,7 +164,14 @@ background-color: white;
    
     border: 2px solid red;
 }
-
+#amountDisplay2{
+  width: 70%;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 30px;
+ 
+  border: 2px solid red;
+}
 .section{
    display: flex;
    justify-content: space-between;

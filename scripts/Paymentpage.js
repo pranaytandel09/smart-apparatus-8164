@@ -250,27 +250,6 @@ let result=(outputRate / inputRate)*inputValue;
 // }
 
 
-
-
-
-
-
-
-
-
-
-
-
-// Tickmark Animation ------------------------------>
-// function animationTickmark() {
-//     const tickAnimation = document.getElementById("tickAnimation");
-//     tickAnimation.classList.add("show");
-//   }
-  
-//   document.addEventListener("DOMContentLoaded", animationTickmark);
-
-// // -------------------------------------------------------->
-
 // // sending money to benificary
 // // Replace this with the URL of your API endpoint
 // const API_URL = "https://reqres.in/api/users";
@@ -288,6 +267,18 @@ let result=(outputRate / inputRate)*inputValue;
 
 
 // bankDetails form submission------------------------>
+
+// Tickmark Animation ------------------------------>
+function animationTickmark() {
+  const tickAnimation = document.getElementById("tickAnimation");
+  tickAnimation.classList.add("show");
+}
+
+document.addEventListener("DOMContentLoaded", animationTickmark);
+
+// -------------------------------------------------------->
+
+
 let transactionDetails= JSON.parse(localStorage.getItem("transaction")) || []
 let bankDetails=document.getElementById("bankDetails");
 
@@ -302,11 +293,14 @@ else{
 
   obj.currencyName=toCountries.value;
   
- 
+  let randomValue=Math.floor(Math.random()*40)
   obj.amount= bankDetails.Amount.value;
   obj.bankName=bankDetails.bankName.value;
   obj.accNo= bankDetails.accNo.value;
   obj.recipientName= bankDetails.recipientName.value;
+obj.charges= randomValue;
+obj.total= Number(bankDetails.Amount.value) + randomValue;
+
   box1.style.display="none";
 box2.style.display="block";
 box3.style.display="none";
@@ -329,12 +323,27 @@ let checkBank= document.getElementById("checkBank")
 let transactionAmount=document.getElementById("transactionAmount")
 let transactionFees=document.getElementById("transactionFees")
 
+let checkValue2= document.getElementById("checkValue2")
+let checkName2=document.getElementById("checkName2")
+let checkBank2= document.getElementById("checkBank2")
+let transactionAmount2=document.getElementById("transactionAmount2")
+let transactionFees2=document.getElementById("transactionFees2")
+
 function tansactionCheck(obj){
 
-  checkValue.innerText=`${obj.currencyName} ${Number(obj.amount) + Math.floor(Math.random()*70)}` 
+ 
+  checkValue.innerText=`${obj.currencyName} ${obj.total}` 
   checkName.innerText=`${obj.recipientName}`
   checkBank.innerText=`${obj.bankName} | ${obj.accNo}` 
 
-  transactionAmount.innerText=obj.amount;
-  transactionFees.innerText=Math.floor(Math.random()*70);
+  transactionAmount.innerText=`${obj.currencyName} ${(obj.amount)}`;
+  transactionFees.innerText=`${obj.currencyName} ${obj.charges}`;
+
+   
+  checkValue2.innerText=`${obj.currencyName} ${obj.total}` 
+  checkName2.innerText=`${obj.recipientName}`
+  checkBank2.innerText=`${obj.bankName} | ${obj.accNo}` 
+
+  transactionAmount2.innerText=`${obj.currencyName} ${(obj.amount)}`;
+  transactionFees2.innerText=`${obj.currencyName} ${obj.charges}`;
 }
