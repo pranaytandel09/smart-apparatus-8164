@@ -183,7 +183,7 @@ body{
 }
 .payment>div>img{
     width: 70px;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     margin-left: 32%;
     margin-top: 20px;
 }
