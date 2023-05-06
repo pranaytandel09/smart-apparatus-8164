@@ -63,37 +63,79 @@ color: rgb(116, 116, 116);
 }
 #box1{
     display: none;
-    width: 70%;
+    width: 85%;
     margin: auto;
    border:1px solid black 
 
 }
 .currencyChange{
-    width: 60%;
+    width: 80%;
     margin: auto;
   
     border: 2px solid red;
     margin-top: 20px;
     margin-bottom: 20px;
 }
-#childBox{
-  border: 2px solid black;
+.childBox{
+  /* border: 2px solid black; */
   width: 100%;
   display: flex;
   justify-content: space-around;
-  background-color: aqua;
+ 
 }
-#childBox div{
+.childBox>div{
   width: 50%;
   margin: 5px;
-  border: 1px solid blue;
-  background-color: aqua;
+  /* border: 1px solid blue; */
+ 
+}
+.countryImg{
+width: 34px;
+border-radius: 50%;
+
+}
+#fromCountries{
+width: 100%;
+margin-bottom: 10px;
+padding: 10px;
+border-radius: 10px;
+background-color: white;
+}
+#toCountries{
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+  }
+#fromCurrency{
+
+  width:100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+}
+#toCurrency{
+
+  width: 100%;
+  margin-bottom: 10px;
+   padding: 10px;
+   border-radius: 10px;
+   background-color: white;
+}
+#changed{
+  width: 100px;
+  padding: 10px;
+  border-radius: 30px;
+  background-color: white;
+  /* height: 50px; */
 }
 
 #box1 form{
     text-align: center;
 }
-#box1 input{
+#bankDetails input{
    width: 60%;
    margin: auto;
    margin-bottom: 10px;
@@ -102,7 +144,7 @@ color: rgb(116, 116, 116);
    background-color: white;
 /* color: white; */
 }
-#box1 input:nth-child(5){
+#bankDetails input:nth-child(5){
      height: 80px;
 }
 #box2{
@@ -114,12 +156,12 @@ color: rgb(116, 116, 116);
     text-align: center;
    /* border:1px solid black  */
 }
-#amountDisplay{
-    width: 30%;
+.amountDisplay{
+    width: 70%;
     margin: auto;
-    margin-top: 80px;
+    margin-top: 20px;
     margin-bottom: 30px;
-    height: 80px;
+   
     border: 2px solid red;
 }
 

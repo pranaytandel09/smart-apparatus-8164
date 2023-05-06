@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
     <link rel="stylesheet" href="./styles/Paymentpage.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" /> -->
     <title>Payment Page</title>
 </head>
 <body>
@@ -54,49 +56,59 @@
     <!-- box1 is the container having segment when user choose "send money by bank account" option -->
     <div id="box1">
       <div class="currencyChange">
-        <span>Convert from</span>
-        <div class="childBox">
-          <div>
-            <select name="" id="fromCountries"></select>
+        <form action="" id="currency">
+          <span>Convert from</span>
+          <div class="childBox">
+            <div>
+              <select name="" id="fromCountries"></select>
+            </div>
+            <div>
+              <input type="number" name="" id="fromCurrency">
+            </div>
           </div>
-          <div>
-            <input type="number" name="" id="fromCurrency">
+  
+          <span>Convert to</span>
+          <div class="childBox">
+            <div>
+              <select name="" id="toCountries">
+                <option value="" ></option>
+              </select>
+            </div>
+            <div>
+              <input type="number" name="" id="toCurrency">
+            </div>
           </div>
-        </div>
-
-        <span>Convert to</span>
-        <div class="childBox">
-          <div>
-            <select name="" id="toCountries"></select>
-          </div>
-          <div>
-            <input type="number" name="" id="toCurrency">
-          </div>
-        </div>
+          <input type="submit" value="Change" id="changed">
+        </form>
+        
       </div>
         <form action="" id="bankDetails">
+            <input type="number" id="Amount" placeholder="Amount">
             <input type="text" id="bankName" placeholder="Recipient's Bank">
-            <input type="text" id="IFSC" placeholder="IFSC Code">
             <input type="number" id="accNo" placeholder="Account Number">
             <input type="text" id="recipientName" placeholder="Recipient's Account Name">
-            <input type="text" placeholder="Description (Optional)">
-            <input type="submit" id="submitBtn1" value="Continue">
+            <input type="text" placeholder="Description (optional)">
+            <input type="submit"  value="Continue">
         </form>
     </div>
 
     <!-- box2 will be the step2 toward transaction, where it will let the owner review and confirm the payment -->
       <div id="box2">
         <h3>Review Your Transaction</h3>
-        <div id="amountDisplay"></div>
+        <div id="amountDisplay">
+            <h1 id="checkValue"></h1>
+            <h3 id="checkName"></h3>
+            <p id="checkBank"> </p>
+        </div>
 
         <div id="transactionDetails">
             <div class="section">
                 <div><b>Amount to Send</b></div>
-                <div>Amount</div>
+                <div id="transactionAmount">Amount</div>
             </div>
             <div class="section">
                 <div><b>Transaction Fees</b></div>
-                <div>None</div>
+                <div id="transactionFees">None</div>
             </div>
         </div>
 
@@ -146,11 +158,11 @@
                 <div id="transactionDetails">
                     <div class="section">
                         <div><b>Amount to Send</b></div>
-                        <div>Amount</div>
+                        <div >Amount</div>
                     </div>
                     <div class="section">
                         <div><b>Transaction Fees</b></div>
-                        <div>None</div>
+                        <div >None</div>
                     </div>
                 </div>
 
@@ -180,7 +192,11 @@
         </div>
       </div>
 </div> -->
-
+<!-- <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> -->
 </body>
+
+
+
 <script src="./scripts/Paymentpage.js"></script>
+
 </html>
