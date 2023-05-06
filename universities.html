@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/v4-shims.min.css" integrity="sha512-4yDn1AmIfvyydlRqsIga3JribpHu5HdkIFTBZjJPcz01tcsd8B9UwObwZCGez1ZOyUNnxjNQNcZEElhkguF76Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./styles/universities.css" />
+    <title>Document</title>
+</head>
+<body>
+    <nav id="nav">
+        <li>
+            <img src="./utility/logo.png" alt="" srcset="">
+        </li>
+        <li>
+            <a href="home.html"><i class="fa fa-home" aria-hidden="true"></i><br>Home</a>
+        </li>
+        <li>
+            <a href="payments.html"><i class="fa fa-credit-card" aria-hidden="true"></i><br>Payments</a>
+        </li>
+        <li>
+            <a href="cardHome.html"><i class="fa fa-cc-mastercard" aria-hidden="true"></i><br>Cards</a>
+        </li>
+        <li>
+            <a href="transactions.html" id="trans"><i class="fa fa-newspaper-o" aria-hidden="true"></i><br>Transactions</a>
+        </li>
+        <li>
+            <a href="settings.html"><i class="fa fa-cog" aria-hidden="true"></i><br>Settings</a>
+        </li>
+        <li>
+            <a href="settings.html" id="not"><i id="notifi" class="fa fa-bell" aria-hidden="true"></i><br>Notifications</a>
+        </li>       
+    </nav>
+    <div class="info">
+        <h3>Please select the Institution for which you wish to pay fees</h3>
+    </div>
+    <div id="universityDiv">
+        <select name="" id="university">
+            <option value="">Select Institution</option>
+            <option value="Abertay University">Abertay University</option>
+            <option value="Alborg University">Alborg University</option>
+            <option value="Arts University Plymouth">Arts University Plymouth</option>
+            <option value="Arizona State University">Arizona State University</option>
+            <option value="Boston University">Boston University</option>
+            <option value="Cornell University">Cornell University</option>
+            <option value="Dartmouth College">Dartmouth College</option>
+            <option value="Indian Institute of Technology Kanpur">Indian Institute of Technology Kanpur</option>
+            <option value="Massachusetts Institute of Technology">Massachusetts Institute of Technology</option>
+            <option value="Nanyang Technological University">Nanyang Technological University</option>
+            <option value="Harvard University">Harvard University</option>
+            <option value="Stanford University">Stanford University</option>
+            <option value="Tokyo Institute of Technology">Tokyo Institute of Technology</option>
+            <option value="University of Washington">University of Washington</option>
+            <option value="York University">York University</option>
+        </select>
+    </div>
+    <div id="container">
+        <div class="payments">
+            <h3>Payments</h3>
+            <div class="currencyChange">
+                <form action="" id="currency">
+                  <span>Send</span>
+                  <div class="childBox">
+                    <div>
+                      <select name="" id="fromCountries"></select>
+                    </div>
+                    <div>
+                      <input type="number" name="" id="fromCurrency">
+                    </div>
+                  </div>
+          
+                  <span id="receving">Convert to</span>
+                  <div class="childBox">
+                    <div>
+                      <select name="" id="toCountries">
+                        <option value="" ></option>
+                      </select>
+                    </div>
+                    <div>
+                      <input type="number" name="" id="toCurrency">
+                    </div>
+                  </div>
+                  <input type="submit" value="Change" id="changed">
+                </form>                
+              </div>
+        </div>
+        <div class="payInfo">
+            <h3>Payments Information</h3>
+            <form id="form">
+                <input type="checkbox" id="checkbox1" name="checkbox1" value="Application Fee">
+                <label for="checkbox1">Application Fee</label><br>
+                
+                <input type="checkbox" id="checkbox2" name="checkbox2" value="Deposit Fee">
+                <label for="checkbox2">Deposit Fee</label><br>
+                
+                <input type="checkbox" id="checkbox3" name="checkbox3" value="Tuition Fee">
+                <label for="checkbox3">Tuition Fee</label><br>
+
+                <input type="checkbox" id="checkbox4" name="checkbox4" value="Other">
+                <label for="checkbox4">Other</label><br>
+              </form>
+              <button id="nextPage">Continue</button>
+        </div>
+    </div>
+    <script src="./scripts/universities.js"></script>
+</body>
+</html>
