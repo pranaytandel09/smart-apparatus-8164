@@ -1,0 +1,192 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0px;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+#container {
+  width: 95%;
+  margin: auto;
+  margin-top: 60px;
+  /* border: 2px solid red; */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+#box2 {
+  /*     display: none; */
+  width: 80%;
+  margin: auto;
+  /* margin-top: 20px; */
+  text-align: center;
+  /* border: 1px solid black; */
+}
+#amountDisplay {
+  width: 70%;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  border: 2px solid red;
+}
+.section {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 20px 20px 20px;
+  /* margin-top: 25px; */
+  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+  border: 1px solid black;
+  /* border-radius: 15px; */
+}
+#submitBtn2 {
+  width: 100%;
+  margin-top: 80px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #38bb5d;
+  color: white;
+  font-size: 16px;
+}
+#submitBtn2:hover {
+  background-color: green;
+}
+#box3 {
+  display: none;
+  width: 80%;
+  margin: auto;
+  /* border: 2px solid black; */
+  padding-top: 40px;
+  padding-bottom:40px;
+}
+#box3Header {
+  width: 20%;
+  margin: auto;
+  text-align: center;
+}
+
+/* pin authorization section */
+.password-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+}
+
+.password-input {
+  margin-bottom: 10px;
+}
+
+.input-container {
+  position: relative;
+}
+
+.input-container input {
+  padding: 10px 10px 10px 50px;
+  font-size: 18px;
+  text-align: center;
+  width: 200px;
+  height: 40px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  outline: none;
+  background-color: transparent;
+}
+
+.cursor {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 3px;
+  height: 20px;
+  background-color: #000;
+  animation: blink 0.5s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.password-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+.password-button {
+  padding: 20px;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #fffefe;
+  /* color: white; */
+  border: 2px solid #ccc;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.password-button:hover {
+  background-color: #f2f2f2;
+}
+
+.password-button.backspace::before {
+  content: "\f060";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 14px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.alert {
+    position: fixed;
+    top: 25%;
+    left: 43%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: none;
+    transition: all 0.3s ease-in-out;
+}
+.alert.show {
+    display: block;
+    animation: zoomIn 0.5s forwards;
+}
+.alert.hide {
+    animation: zoomOut 0.5s forwards;
+}
+.alert .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: #28a745;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 30px;
+    margin: 0 auto 20px;
+    animation: rotate 2s infinite;
+}
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+@keyframes zoomIn {
+    from { transform: scale(0); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+@keyframes zoomOut {
+    from { transform: scale(1); opacity: 1; }
+    to { transform: scale(0); opacity: 0; }
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/universityPayment.css" /> 
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <div id="box2">
+            <h3>Review Your Transaction</h3>
+            <div id="amountDisplay">
+                <h1 id="checkValue"></h1>
+                <h3 id="checkName"></h3>
+                <p id="checkUniversity"> </p>
+                <p id="checkPayinfo"></p>
+            </div>
+    
+            <div id="transactionDetails">
+                <div class="section">
+                    <div><b>Amount to Send</b></div>
+                    <div id="transactionAmount">Amount</div>
+                </div>
+                <div class="section">
+                    <div><b>Transaction Fees</b></div>
+                    <div id="transactionFees">None</div>
+                </div>
+            </div>    
+              <div><button id="submitBtn2" >Make Transfer</button></div>
+           </div>
+
+           <div id="box3">
+          <div id="box3Header">
+            <h3>Enter Pin</h3>
+          </div>
+            <div class="password-container">
+                <div class="password-input">
+                <div class="input-container">
+                    <input type="password" id="password" name="password" readonly maxlength="4">
+                    <div class="cursor"></div>
+                </div>
+                </div>
+                <div class="password-buttons">
+                <button type="button" class="password-button">1</button>
+                <button type="button" class="password-button">2</button>
+                <button type="button" class="password-button">3</button>
+                <button type="button" class="password-button">4</button>
+                <button type="button" class="password-button">5</button>
+                <button type="button" class="password-button">6</button>
+                <button type="button" class="password-button">7</button>
+                <button type="button" class="password-button">8</button>
+                <button type="button" class="password-button">9</button>
+                <button type="button" class="password-button"></button>
+                <button type="button" class="password-button">0</button>
+                <button type="button" class="password-button backspace">x</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="alert" class="alert">
+		<div class="icon">&#10003;</div>
+		<h2>Success!</h2>
+		<p>Transaction completed successfully!!</p>
+	</div>    
+    <script src="./scripts/universityPayment.js"></script>
+</body>
+</html>

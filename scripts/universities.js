@@ -85,9 +85,10 @@ function renderCountries(data) {
     fromCountries.append(optn);
   });
 }
+let originalAmount=null;
 currency.addEventListener("submit", function (e) {
   e.preventDefault();
-  let inputRate = currencyRate(fromCountries.value);
+  let inputRate = currencyRate(fromCountries.value);  
   let outputRate = currencyRate(toCountries.value);
   let inputValue = currency.fromCurrency.value;
 
@@ -110,12 +111,19 @@ function currencyRate(a) {
 }
 let nextPage=document.getElementById('nextPage');
 nextPage.addEventListener('click',function(){
+  let currencyName=toCountries.value;
+  let originalAmount=fromCurrency.value;
     let obj={
         userName,
         recevierName,
+        currencyName,
         amount,
+        originalAmount,
         payInfo
     }
+    console.log(obj)
     universityData.push(obj);
     localStorage.setItem('university-data',JSON.stringify(universityData))
+    // console.log()
+    window.location.href="universityPayment.html"
 })
