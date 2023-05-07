@@ -3,8 +3,8 @@
 let optionLogo1= document.getElementById("optionLogo1")
 let optn1= document.getElementById("optn1")
 
-let optionLogo2= document.getElementById("optionLogo2")
-let optn2= document.getElementById("optn2")
+// let optionLogo2= document.getElementById("optionLogo2")
+// let optn2= document.getElementById("optn2")
 
 let optionLogo3= document.getElementById("optionLogo3")
 let optn3= document.getElementById("optn3")
@@ -28,6 +28,7 @@ let backBtn= document.getElementById("backBtn")
 
 optionLogo1.addEventListener("click",function(){
     dynamicBox.style.display="block";
+    dynamicBox1.style.display="none";
     box1.style.display="block";
     box2.style.display="none";
     box3.style.display="none";
@@ -36,22 +37,23 @@ optionLogo1.addEventListener("click",function(){
 optn1.addEventListener("click",function(e){
     e.preventDefault()
     dynamicBox.style.display="block";
+    dynamicBox1.style.display="none";
     box1.style.display="block";
     box2.style.display="none";
     box3.style.display="none";
     box4.style.display="none";
 })
-optionLogo2.addEventListener("click",function(){
-    console.log("YESSS")
-    dynamicBox.style.display="none";
-    fetchBeneficiaryData()
-})
-optn2.addEventListener("click",function(e){
-    console.log("YESSS")
-    e.preventDefault()
-    dynamicBox.style.display="none";
-    fetchBeneficiaryData()
-})
+// optionLogo2.addEventListener("click",function(){
+//     console.log("YESSS")
+//     dynamicBox.style.display="none";
+//     fetchBeneficiaryData()
+// })
+// optn2.addEventListener("click",function(e){
+//     console.log("YESSS")
+//     e.preventDefault()
+//     dynamicBox.style.display="none";
+//     fetchBeneficiaryData()
+// })
 // submitBtn1.addEventListener("click",function(e){
 // e.preventDefault();
 
@@ -98,7 +100,8 @@ passwordButtons.forEach((button) => {
 
     if (password.length === 4) {
       if (password === "5872") {
-      showCase()
+      showCase();
+      animationTickmark();
       } else {
         alert("Password is incorrect!");
       }
@@ -125,7 +128,7 @@ function fetchCurrancyRate(){
   fetch("https://mock-server-fw26-217-tz58.onrender.com/Contries")
   .then((res)=>res.json())
   .then((data)=>{
-    console.log(data)
+    // console.log(data)
   renderCountries(data)
   currencyRateData=data;
   })
@@ -274,7 +277,7 @@ function animationTickmark() {
   tickAnimation.classList.add("show");
 }
 
-document.addEventListener("DOMContentLoaded", animationTickmark);
+// document.addEventListener("DOMContentLoaded", animationTickmark);
 
 // -------------------------------------------------------->
 
@@ -326,8 +329,8 @@ let transactionFees=document.getElementById("transactionFees")
 let checkValue2= document.getElementById("checkValue2")
 let checkName2=document.getElementById("checkName2")
 let checkBank2= document.getElementById("checkBank2")
-let transactionAmount2=document.getElementById("transactionAmount2")
-let transactionFees2=document.getElementById("transactionFees2")
+// let transactionAmount2=document.getElementById("transactionAmount2")
+// let transactionFees2=document.getElementById("transactionFees2")
 
 function tansactionCheck(obj){
 
@@ -344,6 +347,338 @@ function tansactionCheck(obj){
   checkName2.innerText=`${obj.recipientName}`
   checkBank2.innerText=`${obj.bankName} | ${obj.accNo}` 
 
-  transactionAmount2.innerText=`${obj.currencyName} ${(obj.amount)}`;
-  transactionFees2.innerText=`${obj.currencyName} ${obj.charges}`;
+  // transactionAmount2.innerText=`${obj.currencyName} ${(obj.amount)}`;
+  // transactionFees2.innerText=`${obj.currencyName} ${obj.charges}`;
 }
+
+// payment option-----> using rupay tag------------------------------------------
+// step 1
+let dynamicBox1=document.getElementById("dynamicBox1")
+let cardBox= document.getElementById("cardBox")
+
+optn3.addEventListener("click",function(e){
+  e.preventDefault()
+  console.log("Option3")
+  dynamicBox.style.display="none";
+  dynamicBox1.style.display="block";
+  cardBox.style.display="block";
+  selectedCard.style.display="none";
+  selectedUserBox3.style.display="none";
+  selectedUserBox4.style.display="none";
+  fetchCardData()
+})
+optionLogo3.addEventListener("click",function(){
+console.log("Option3")
+  dynamicBox.style.display="none";
+  dynamicBox1.style.display="block";
+  cardBox.style.display="block"
+
+  selectedCard.style.display="none";
+  selectedUserBox3.style.display="none";
+  selectedUserBox4.style.display="none";
+  fetchCardData()
+})
+
+// fetching the data----------------------->
+function fetchCardData(){
+
+  fetch("https://mock-server-0092.onrender.com/users")
+  .then((res)=>res.json())
+  .then((data)=>{
+    console.log(data)
+    renderCardData(data)
+  })
+  .catch((err)=>console.log(err))
+}
+
+// rendering data in cardBox---------------->
+function  renderCardData(data){
+  cardBox.innerHTML="";
+
+data.forEach(function(el){
+
+  cardBox.append(createCard(el))
+})
+}
+
+function createCard(el){
+  let card= document.createElement("div");
+  card.className= "card";
+
+  let cardImg= document.createElement("div");
+  cardImg.className="cardImg";
+
+  let img=document.createElement("img")
+  img.className="image";
+  img.src=el.avatar;
+  cardImg.append(img);
+
+  let userCardInfo= document.createElement("div");
+  userCardInfo.className="userCardInfo";
+
+  let userCardname= document.createElement("h2")
+  userCardname.className="userCardname";
+  userCardname.innerText=`${el.first_name} ${el.last_name}`;
+
+
+  let userCardId= document.createElement("p")
+  userCardId.className="userCardId";
+
+  let anchorTag= document.createElement("a");
+  anchorTag.innerText=`${el.first_name}@₹Pay`;
+
+anchorTag.addEventListener("click",function(){
+
+  cardBox.style.display="none";
+  selectedCard.style.display="block";
+  selectedUserBox3.style.display="none";
+  selectedUserBox4.style.display="none";
+
+  displaySelectedCard()
+  selectedCardPayment(el);
+  fetchCurrancyRate2();
+})
+
+  userCardId.append(anchorTag)
+
+  userCardInfo.append(userCardname,userCardId);
+
+card.append(cardImg,userCardInfo)
+return card;
+}
+
+// step2 of pay using anchorTag segment
+let selectedCardObject={};
+let selectedCard= document.getElementById("selectedCard")
+let selectedUserInfo= document.getElementById("selectedUserInfo")
+let selectedUserInfo2= document.getElementById("selectedUserInfo2")
+function displaySelectedCard(){
+  cardBox.style.display="none";
+  selectedCard.style.display="block";
+
+}
+
+function selectedCardPayment(el){
+  selectedUserInfo.innerHTML=""
+  selectedUserInfo2.innerHTML=""
+
+ let selectedUserImg= document.createElement("img")
+ selectedUserImg.className= "selectedUserInfoImg";
+ selectedUserImg.src=el.avatar;
+
+ let selectedUserImg2= document.createElement("img")
+ selectedUserImg2.className= "selectedUserInfoImg";
+ selectedUserImg2.src=el.avatar;
+
+ let selectedUserUsername= document.createElement("h2")
+ selectedUserUsername.className="selectedUserUsername"
+ selectedUserUsername.innerText=`${el.first_name} ${el.last_name}`
+
+ let selectedUserUsername2= document.createElement("h2")
+ selectedUserUsername2.className="selectedUserUsername"
+ selectedUserUsername2.innerText=`${el.first_name} ${el.last_name}`
+
+ let selectedUserId= document.createElement("h4")
+ selectedUserId.className=("selectedUserId")
+ selectedUserId.innerText=`${el.first_name}@₹Pay`
+
+ let selectedUserId2= document.createElement("h4")
+ selectedUserId2.className=("selectedUserId")
+ selectedUserId2.innerText=`${el.first_name}@₹Pay`
+
+ let displayMoney= document.createElement("h3");
+ displayMoney.id="displayMoney";
+
+ let displayMoney2= document.createElement("h3");
+ displayMoney2.id="displayMoney2";
+
+ let payment= document.createElement("button")
+ payment.id="paymentBtn";
+ payment.innerText="Pay";
+
+payment.addEventListener("click",function(){
+  cardBox.style.display="none";
+  selectedCard.style.display="none";
+  selectedUserBox3.style.display="block";
+  selectedUserBox4.style.display="none";
+
+  selectedUserPass()
+  createSelectedUserObject(el,displayMoney.innerText, selectedUserId.innerText)
+})
+
+let paymentConfermation= document.createElement("h5")
+paymentConfermation.innerText="Payment Done!"
+
+ selectedUserInfo.append(selectedUserImg,selectedUserUsername,selectedUserId,displayMoney,payment)
+ selectedUserInfo2.append(selectedUserImg2,selectedUserUsername2,selectedUserId2,displayMoney2,paymentConfermation)
+}
+
+// object creation -------------------------->
+// let transactionDetails= JSON.parse(localStorage.getItem("transaction")) || []
+
+function  createSelectedUserObject(el,Money,id){
+//   accNo: "124444"
+// amount: "50460"
+// bankName: "Punjab National Bank"
+// charges: 21
+// currencyName: "USD"
+// recipientName: "Raju RamPrasad"
+// total: 50481
+
+  console.log(el);
+  console.log(Money)
+
+  selectedCardObject.recipientName=`${el.first_name} ${el.last_name}`;
+  selectedCardObject.total= `${Money}`
+  selectedCardObject.id=id;
+}
+
+
+
+
+
+
+// --------------------------------------------------->
+
+// currency exchange part-----------------------
+let currencyRateData2=[]
+
+let selectedUserFromCountries= document.getElementById("selectedUserFromCountries");
+let selectedUserToCountries= document.getElementById("selectedUserToCountries")
+let selectedUserFromCurrency= document.getElementById("selectedUserFromCurrency")
+let selectedUserToCurrency= document.getElementById("selectedUserToCurrency");
+let selectedUserCurrency=document.getElementById("selectedUserCurrency");
+
+
+
+function fetchCurrancyRate2(){
+
+  fetch("https://mock-server-fw26-217-tz58.onrender.com/Contries")
+  .then((res)=>res.json())
+  .then((data)=>{
+    console.log(data)
+  renderCountries2(data)
+  currencyRateData2=data;
+  })
+  .catch((err)=>console.log(err))
+}
+
+function  renderCountries2(data){
+  selectedUserFromCountries.innerHTML="";
+  selectedUserToCountries.innerHTML="";
+  data.forEach(function(el){
+// console.log(el)
+let optn= document.createElement("option");
+optn.value= el.name;
+
+let optn2= document.createElement("option");
+optn2.value= el.name;
+
+// let img= document.createElement("img")
+// img.src= el.image;
+// img.class= "countryImg";
+optn.innerText= el.name
+optn2.innerText= el.name
+
+
+
+
+selectedUserToCountries.append(optn2)
+selectedUserFromCountries.append(optn)
+  })
+}
+
+selectedUserCurrency.addEventListener("submit",function(e){
+  let displayMoney=document.getElementById("displayMoney")
+  let displayMoney2=document.getElementById("displayMoney2")
+  e.preventDefault()
+   let inputRate=currencyRate2(selectedUserFromCountries.value)
+   let outputRate=currencyRate2(selectedUserToCountries.value)
+   let inputValue= selectedUserCurrency.selectedUserFromCurrency.value;
+ 
+let result=(outputRate / inputRate)*inputValue;
+selectedUserCurrency.selectedUserToCurrency.value= Math.ceil(result);
+displayMoney.innerText=`${selectedUserToCountries.value} ${Math.ceil(result)}`
+displayMoney2.innerText=`${selectedUserToCountries.value} ${Math.ceil(result)}`
+  //  let bankDetails=document.getElementById("bankDetails");
+  //  bankDetails.Amount.value=toCurrency.value;
+  })
+
+  function currencyRate2(a){
+   let value= "";
+   currencyRateData2.forEach(function(e){
+ 
+      if(e.name==a){
+       value= e.rate;
+      }
+    })
+  return(value)
+  }
+
+  // password Authentication---------------->
+
+  let selectedUserBox3= document.getElementById("selectedUserBox3")
+  // selectedUserBox3.style.display="block";
+
+  let selectedUserBackBtn= document.getElementById("selectedUserBackBtn");
+  selectedUserBackBtn.addEventListener("click",function(){
+    selectedUserBox3.style.display="none";
+    selectedCard.style.display="block";
+  })
+
+function selectedUserPass(){
+
+
+  const passwordInput2 = document.getElementById("password2");
+  const passwordButtons2 = document.querySelectorAll(".password-button");
+  
+  
+  let password2 = "";
+  
+  passwordButtons2.forEach((button) => {
+    button.addEventListener("click", () => {
+      if (button.classList.contains("backspace")) {
+        password2 = password2.slice(0, -1);
+      } else {
+        password2 += button.textContent;
+      }
+  
+      passwordInput2.value = password2;
+  
+      if (password2.length === 4) {
+        if (password2 === "5872") {
+          selectedUserShowCase()
+          transactionDetails.push(selectedCardObject)
+          localStorage.setItem("transaction",JSON.stringify(transactionDetails));
+          animationTickmark2()
+
+        } else {
+          alert("Password is incorrect!");
+        }
+  
+        password2 = "";
+        passwordInput2.value = "";
+      }
+    });
+  });
+}
+ 
+// -------------------------------------------------------------->
+
+let selectedUserBox4= document.getElementById("selectedUserBox4")
+function selectedUserShowCase(){
+  cardBox.style.display="none";
+  selectedCard.style.display="none";
+
+  selectedUserBox3.style.display="none";
+  selectedUserBox4.style.display="block"
+}
+
+function animationTickmark2() {
+  const tickAnimation2 = document.getElementById("tickAnimation2");
+  tickAnimation2.classList.add("show2");
+}
+
+// document.addEventListener("DOMContentLoaded", animationTickmark);
+
+// -------------------------------------------------------->
