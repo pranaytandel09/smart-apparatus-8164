@@ -713,7 +713,7 @@ function selectedUserShowCase(){
 
 function animationTickmark2() {
   const tickAnimation2 = document.getElementById("tickAnimation2");
-  tickAnimation2.classList.add("show2");
+  tickAnimation2.classList.add("show2");  
 }
 
 // document.addEventListener("DOMContentLoaded", animationTickmark);
