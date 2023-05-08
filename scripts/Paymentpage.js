@@ -1,3 +1,7 @@
+
+let transactionDetails= JSON.parse(localStorage.getItem("transaction")) || []
+// let transactionDetails2= JSON.parse(localStorage.getItem("transaction2")) || []
+
 // catching payment Option method by img and anchor tag
 
 let optionLogo1= document.getElementById("optionLogo1")
@@ -64,6 +68,13 @@ submitBtn2.addEventListener("click",function(e){
     box2.style.display="none";
     box3.style.display="block";
     box4.style.display="none";
+
+
+    let transactionDetails= JSON.parse(localStorage.getItem("transaction")) || []
+
+
+    transactionDetails.push(transactionObj)
+    localStorage.setItem("transaction",JSON.stringify(transactionDetails))
     })
 
     function showCase(){
@@ -100,6 +111,8 @@ passwordButtons.forEach((button) => {
 
     if (password.length === 4) {
       if (password === "5872") {
+//         transactionDetails1.push(transactionObj)
+//  localStorage.setItem("transaction1",JSON.stringify(transactionDetails1))
       showCase();
       animationTickmark();
       } else {
@@ -282,7 +295,8 @@ function animationTickmark() {
 // -------------------------------------------------------->
 
 
-let transactionDetails= JSON.parse(localStorage.getItem("transaction")) || []
+let transactionObj={};
+
 let bankDetails=document.getElementById("bankDetails");
 
 bankDetails.addEventListener("submit",function(e){
@@ -292,25 +306,39 @@ if(bankDetails.bankName.value=="" || bankDetails.accNo.value=="" || bankDetails.
   alert("Enter All Feilds")
 }
 else{
+  let randomValue=Math.floor(Math.random()*10)
   let obj={};
-
-  obj.currencyName=toCountries.value;
+obj.fromCurrencyName=fromCountries.value;
+  obj.toCurrencyName=toCountries.value;
+  obj.debitableAmount= Number(fromCurrency.value)+randomValue;
   
-  let randomValue=Math.floor(Math.random()*40)
   obj.amount= bankDetails.Amount.value;
   obj.bankName=bankDetails.bankName.value;
   obj.accNo= bankDetails.accNo.value;
   obj.recipientName= bankDetails.recipientName.value;
 obj.charges= randomValue;
-obj.total= Number(bankDetails.Amount.value) + randomValue;
+// obj.total= Number(bankDetails.Amount.value) ;
+// console.log(obj);
+
+// creation of transaction object which is going to be added in LS---------------------------
+transactionObj.debitableAmount=Number(fromCurrency.value)+randomValue;
+transactionObj.fromCurrencyName=fromCountries.value;;
+transactionObj.sentAmount=Number(bankDetails.Amount.value);
+transactionObj.toCurrencyName=toCountries.value;
+transactionObj.recepientName=bankDetails.recipientName.value;
+console.log(transactionObj);
+
+// -----------------------------------------------------------------------------------------------
 
   box1.style.display="none";
 box2.style.display="block";
 box3.style.display="none";
 box4.style.display="none";
 console.log(obj)
-transactionDetails.push(obj)
-localStorage.setItem("transaction",JSON.stringify(transactionDetails))
+
+
+
+
 
 tansactionCheck(obj)
 }
@@ -325,6 +353,7 @@ let checkName=document.getElementById("checkName")
 let checkBank= document.getElementById("checkBank")
 let transactionAmount=document.getElementById("transactionAmount")
 let transactionFees=document.getElementById("transactionFees")
+let debitable= document.getElementById("debitable");
 
 let checkValue2= document.getElementById("checkValue2")
 let checkName2=document.getElementById("checkName2")
@@ -335,15 +364,15 @@ let checkBank2= document.getElementById("checkBank2")
 function tansactionCheck(obj){
 
  
-  checkValue.innerText=`${obj.currencyName} ${obj.total}` 
+  checkValue.innerText=`${obj.toCurrencyName} ${obj.amount}` 
   checkName.innerText=`${obj.recipientName}`
   checkBank.innerText=`${obj.bankName} | ${obj.accNo}` 
 
-  transactionAmount.innerText=`${obj.currencyName} ${(obj.amount)}`;
-  transactionFees.innerText=`${obj.currencyName} ${obj.charges}`;
-
+  transactionAmount.innerText=`${obj.toCurrencyName} ${(obj.amount)}`;
+  transactionFees.innerText=`${obj.fromCurrencyName} ${obj.charges}`;
+  debitable.innerText=`${obj.fromCurrencyName} ${obj.debitableAmount}`
    
-  checkValue2.innerText=`${obj.currencyName} ${obj.total}` 
+  checkValue2.innerText=`${obj.toCurrencyName} ${obj.amount}` 
   checkName2.innerText=`${obj.recipientName}`
   checkBank2.innerText=`${obj.bankName} | ${obj.accNo}` 
 
@@ -503,7 +532,14 @@ payment.addEventListener("click",function(){
   selectedUserBox4.style.display="none";
 
   selectedUserPass()
-  createSelectedUserObject(el,displayMoney.innerText, selectedUserId.innerText)
+  createSelectedUserObject(el)
+
+  
+
+let transactionDetails= JSON.parse(localStorage.getItem("transaction")) || []
+
+  transactionDetails.push(selectedCardObject)
+  localStorage.setItem("transaction",JSON.stringify(transactionDetails));
 })
 
 let paymentConfermation= document.createElement("h5")
@@ -516,21 +552,10 @@ paymentConfermation.innerText="Payment Done!"
 // object creation -------------------------->
 // let transactionDetails= JSON.parse(localStorage.getItem("transaction")) || []
 
-function  createSelectedUserObject(el,Money,id){
-//   accNo: "124444"
-// amount: "50460"
-// bankName: "Punjab National Bank"
-// charges: 21
-// currencyName: "USD"
-// recipientName: "Raju RamPrasad"
-// total: 50481
+function  createSelectedUserObject(el){
 
-  console.log(el);
-  console.log(Money)
-
-  selectedCardObject.recipientName=`${el.first_name} ${el.last_name}`;
-  selectedCardObject.total= `${Money}`
-  selectedCardObject.id=id;
+  selectedCardObject.recepientName=`${el.first_name} ${el.last_name}`;
+ 
 }
 
 
@@ -600,6 +625,18 @@ let result=(outputRate / inputRate)*inputValue;
 selectedUserCurrency.selectedUserToCurrency.value= Math.ceil(result);
 displayMoney.innerText=`${selectedUserToCountries.value} ${Math.ceil(result)}`
 displayMoney2.innerText=`${selectedUserToCountries.value} ${Math.ceil(result)}`
+
+//creation of object which will be reflected on LS--------------------------------------------------->
+
+selectedCardObject.debitableAmount=Number(selectedUserFromCurrency.value);
+selectedCardObject.fromCurrencyName=selectedUserFromCountries.value;
+selectedCardObject.sentAmount=Math.ceil(result);
+selectedCardObject.toCurrencyName=selectedUserToCountries.value;
+
+// ----------------------------------------------------------------------------------------------------------------->
+
+
+
   //  let bankDetails=document.getElementById("bankDetails");
   //  bankDetails.Amount.value=toCurrency.value;
   })
@@ -648,8 +685,8 @@ function selectedUserPass(){
       if (password2.length === 4) {
         if (password2 === "5872") {
           selectedUserShowCase()
-          transactionDetails.push(selectedCardObject)
-          localStorage.setItem("transaction",JSON.stringify(transactionDetails));
+          // console.log(selectedCardObject)
+       
           animationTickmark2()
 
         } else {

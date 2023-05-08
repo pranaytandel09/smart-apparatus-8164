@@ -1,7 +1,7 @@
 body{
     padding:0;
     margin: 0;
- 
+    background-image: linear-gradient(to right top, #b56894, #9b5681, #82446d, #6a335a, #532248, #491a3f, #3f1236, #360a2e, #36082d, #36062c, #36042a, #360229);
 }
 *{
     box-sizing: border-box;
@@ -9,10 +9,52 @@ body{
 }
 
 #nav{
-width: 100%;
-margin: auto;
-display: flex;
-justify-content: center;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 25px;
+  padding-bottom: 15px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  background-image: linear-gradient(135deg, rgb(149, 20, 156), rgb(85, 80, 176), rgb(21, 53, 133));
+}
+#nav li{
+  list-style-type: none;
+  /* margin-left: 10%; */
+}
+#nav li>a{
+  text-decoration: none;
+  color: rgb(254, 253, 253);
+}
+#nav li>a:hover{
+  color: rgb(18, 18, 18);
+}
+#nav > li > a > i{
+  display: flex;
+  justify-content: center;
+  margin-bottom: -10px;
+  /* border: 2px solid red; */
+}
+/* #nav > li > a > i{
+  width: 50px;
+  margin-left: 15px; 
+   padding-left: 13px; 
+}  */
+/* #trans{
+  padding-left: 15%;
+} */
+#notifi{
+  width:28px;
+  /* border:2px solid rgb(139, 134, 134); */
+  border-radius:30px ;
+  margin-left: 30px;
+  padding: 4px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;    
+}
+/* #nav > li #not{
+ border: 3px solid red;
+} */
+#nav>img{
+  border: 2px solid red;
+  padding: 10px;
 }
 #parent{
     width: 90%;
@@ -59,7 +101,7 @@ color: rgb(116, 116, 116);
 }
 #dynamicBox{
     width:60%;
-    /* border:1px solid red */
+    /* border:1px solid red; */
     padding-top: 60px;
     display: none;
 }
@@ -80,6 +122,7 @@ color: rgb(116, 116, 116);
     margin-bottom: 20px;
     box-shadow: rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
     border-radius: 30px;
+    background-color: white;
 }
 .childBox{
   /* border: 2px solid black; */
@@ -140,7 +183,13 @@ background-color: white;
 
 #box1 form{
     text-align: center;
+    width: 80%;
+    margin: auto;
     /* border: 2px solid red; */
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 50px;
 }
 #bankDetails input{
    width: 60%;
@@ -167,6 +216,8 @@ box-shadow: rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
    /* border:1px solid black  */
    box-shadow: rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
    border-radius: 30px;
+   background-color: white;
+   margin-bottom: 100px;
 }
 #amountDisplay{
     width: 70%;
@@ -214,8 +265,14 @@ box-shadow: rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }
 #box3{
     display: none;
+    width: 60%;
+    margin: auto;
    /* text-align: center; */
     /* border: 2px solid black; */
+    background-color: white;
+    padding: 30px;
+    border-radius: 30px;
+    margin-bottom: 50px;
 }
 #box3Header{
 
@@ -230,7 +287,7 @@ border-radius: 10px;
    padding: 10px;
     border-radius: 50%;
     margin-right: 50px;
-    margin-left: 150px;
+    margin-left: 80px;
     background-color: white;
     color: black;
     border: none;
@@ -334,6 +391,7 @@ border-radius: 10px;
     box-shadow: rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
     border-radius: 20px;
     padding: 15px;
+    background-color: white;
 }
   /* ------------------------------------------------ */
 
@@ -433,6 +491,7 @@ align-items: center;
 box-shadow: rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 margin-bottom: 10px;
 border-radius: 12px;
+background-color: white;
 }
 .cardImg img{
 width: 50px;
@@ -467,6 +526,7 @@ text-align: center;
   box-shadow: rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
   padding: 20px;
   border-radius: 30px;
+  background-color: white;
 }
 #selectedUserInfo img{
   width: 120px;
@@ -490,6 +550,7 @@ text-align: center;
   box-shadow: rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
   padding: 20px;
   border-radius: 30px;
+  background-color: white;
 }
 #selectedUserInfo2 img{
   width: 120px;
@@ -516,6 +577,8 @@ text-align: center;
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 20px;
+    background-color: white;
+    margin-bottom: 50px;
 }
 .selectedUserChildBox{
    /* border: 2px solid black;  */
@@ -577,8 +640,14 @@ background-color: white;
 
   #selectedUserBox3{
     display: none;
+width: 60%;
+margin: auto;
    /* text-align: center; */
     /* border: 2px solid black; */
+    background-color: white;
+    padding: 30px;
+    border-radius: 30px;
+    margin-bottom: 50px;
 }
 #selectedUserBox3Header{
 
@@ -590,7 +659,7 @@ text-align: center;
    padding: 10px;
     border-radius: 50%;
     margin-right: 50px;
-    margin-left: 150px;
+    margin-left: 80px;
     background-color: white;
     color: black;
     border: none;
@@ -682,6 +751,16 @@ text-align: center;
   /* border: 2px solid red; */
   text-align: center;
   margin-top: -50px;
+  /* background-color: white; */
+  margin-bottom: 50px;
+}
+#selectedUserBox4 h3{
+ /* border: 2px solid red; */
+ padding: 20px;
+ width: 30%;
+ margin: auto;
+ background-color: white;
+ border-radius: 10px;
 }
 /* ------------------------------------------------ */
 

@@ -10,12 +10,33 @@
     <title>Payment Page</title>
 </head>
 <body>
+  <nav id="nav">
+    <li>
+        <img src="./utility/logo.png" alt="" srcset="">
+    </li>
+    <li>
+        <a href="home.html"><i class="fa fa-home" aria-hidden="true"></i><br>Home</a>
+    </li>
+    <li>
+        <a href="payments.html"><i class="fa fa-credit-card" aria-hidden="true"></i><br>Payments</a>
+    </li>
+    <li>
+        <a href="cards.html"><i class="fa fa-cc-mastercard" aria-hidden="true"></i><br>Cards</a>
+    </li>
+    <li>
+        <a href="transactions.html" id="trans"><i class="fa fa-newspaper-o" aria-hidden="true"></i><br>Transactions</a>
+    </li>
+    <li>
+        <a href="settings.html"><i class="fa fa-cog" aria-hidden="true"></i><br>Settings</a>
+    </li>
+    <li>
+        <a href="settings.html" id="not"><i id="notifi" class="fa fa-bell" aria-hidden="true"></i><br>Notifications</a>
+    </li>
+   
+</nav>
     <!-- container having different payment options -->
          
-      <div id="nav">
-    
-        <!-- <div id="header1">Send Money</div> -->
-      </div>
+      
 
 <div id="parent">
 
@@ -110,6 +131,10 @@
                 <div><b>Transaction Fees</b></div>
                 <div id="transactionFees">None</div>
             </div>
+            <div class="section">
+              <div><b>Debitable Amount</b></div>
+              <div id="debitable">None</div>
+          </div>
         </div>
 
           <div><button id="submitBtn2" >Make Transfer</button></div>
