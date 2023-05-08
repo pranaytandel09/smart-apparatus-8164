@@ -1,104 +1,107 @@
 * {
-    box-sizing: border-box;
-  }
-  body {
-    margin: 0px;
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-  }
-  #nav{
-    display: flex;
-    justify-content: space-around;
-    padding-top: 25px;
-    padding-bottom: 15px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-sizing: border-box;
 }
-#nav li{
-    list-style-type: none;
-    /* margin-left: 10%; */
-    
+body {
+  margin: 0px;
+  font-family: Arial, sans-serif;
+  background-image: linear-gradient(to right top, #b56894, #9b5681, #82446d, #6a335a, #532248, #491a3f, #3f1236, #360a2e, #36082d, #36062c, #36042a, #360229);
 }
-#nav li>a{
-    text-decoration: none;
-    color: black;
+#nav {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 25px;
+  padding-bottom: 15px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  background-image: linear-gradient(135deg,rgb(149, 20, 156),rgb(85, 80, 176),rgb(21, 53, 133));
 }
-#nav > li > a > i{
-    display: flex;
-    justify-content: center;
-    margin-bottom: -10px;
-    /* border: 2px solid red; */
+#nav li {
+  list-style-type: none;
+  /* margin-left: 10%; */
 }
-#notifi{
-    width:28px;
-    /* border:2px solid rgb(139, 134, 134); */
-    border-radius:30px ;
-    margin-left: 30px;
-    padding: 4px;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;    
+#nav li > a {
+  text-decoration: none;
+  color: rgb(254, 253, 253);
 }
-  .nav {
-    /* border: 1px solid black; */
-    text-align: center;
-  }
+#nav li > a:hover {
+  color: rgb(18, 18, 18);
+}
+#nav > li > a > i {
+  display: flex;
+  justify-content: center;
+  margin-bottom: -10px;
+  /* border: 2px solid red; */
+}
+#notifi {
+  width: 28px;
+  /* border:2px solid rgb(139, 134, 134); */
+  border-radius: 30px;
+  margin-left: 30px;
+  padding: 4px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.nav {
+  /* border: 1px solid black; */
+  text-align: center;
+  color: white;
+}
+#container {
+  width: 80%;
+  margin: auto;
+  /* border: 1px solid black; */
+  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15%;
+}
+#container > div {
+  padding: 10px;
+  padding-left: 5%;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.card {
+  margin-left: 2%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #2e2f31;
+  color: white;
+  height: 30%;
+  border-radius: 5%;
+  width: 70%;
+  padding: 5px;
+  /* border-top-right-radius: 15%; */
+}
+#input:hover {
+  cursor: pointer;
+}
+.desc {
+  width: 50%;
+  margin: auto;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 30px;
+  margin-bottom: 10px;
+}
+#image {
+  margin-top: 3.5%;
+  margin-right: 1%;
+  /* border: 1px solid red; */
+}
+#descDiv {
+  border-bottom: 1px solid rgb(176, 176, 176);
+  display: flex;
+}
+#descDiv1 {
+  display: flex;
+}
+@media only screen and (max-width: 823px) {
   #container {
     width: 80%;
     margin: auto;
-    /* border: 1px solid black; */
-    padding: 30px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15%;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 50px;
   }
-  #container > div {
-    padding: 10px;
-    padding-left: 5%;
-    background-color: #fff;
-    border-radius: 5%;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  }
-  .card {
-    margin-left: 2%;
-    display: flex;
-    justify-content: space-between;
-    background-color: #2e2f31;
-    color: white;
-    height: 30%;
-    border-radius: 5%;
-    width: 70%;
-    padding: 5px;
-    /* border-top-right-radius: 15%; */
-  }
-  #input:hover {
-    cursor: pointer;
-  }
-  .desc {
-    width: 50%;
-    margin: auto;
-    padding: 10px;
-    background-color: #fff;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border-radius: 5%;
-    margin-bottom: 10px;
-  }
-  #image {
-    margin-top: 3.5%;
-    margin-right: 1%;
-    /* border: 1px solid red; */
-  }
-  #descDiv {
-    border-bottom: 1px solid rgb(176, 176, 176);
-    display: flex;
-  }
-  #descDiv1 {
-    display: flex;
-  }
-  @media only screen and (max-width: 823px) {
-    #container {
-      width: 80%;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(1, 1fr);
-      gap: 50px;
-    }
-  }
-  
+}
