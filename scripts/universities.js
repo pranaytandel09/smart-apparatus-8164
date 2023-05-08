@@ -1,48 +1,42 @@
 let receving = document.getElementById("receving");
 let university = document.getElementById("university");
 
-let userData = JSON.parse(localStorage.getItem("user-data")) || [];
 let universityData = JSON.parse(localStorage.getItem("university-data")) || [];
-let recevierName=null;
-let amount=null;
-let payInfo=[];
+let payInfo = [];
 university.addEventListener("change", function () {
   receving.innerText = `${university.value} receives`;
-  recevierName=university.value;
+  recevierName = university.value;
 });
 
-let userName = userData[userData.length - 1].name;
+let checkbox1 = document.getElementById("checkbox1");
+let checkbox2 = document.getElementById("checkbox2");
+let checkbox3 = document.getElementById("checkbox3");
+let checkbox4 = document.getElementById("checkbox4");
 
-let checkbox1=document.getElementById('checkbox1');
-let checkbox2=document.getElementById('checkbox2');
-let checkbox3=document.getElementById('checkbox3');
-let checkbox4=document.getElementById('checkbox4');
-
-
-checkbox1.addEventListener('change',function(){
-    if (this.checked) {
-        payInfo.push(checkbox1.value)
-        console.log(checkbox1.value);
-      } 
-})
-checkbox2.addEventListener('change',function(){
-    if (this.checked) {
-        payInfo.push(checkbox2.value)
-        console.log(checkbox2.value);
-      } 
-})
-checkbox3.addEventListener('change',function(){
-    if (this.checked) {
-        payInfo.push(checkbox3.value)
-        console.log(checkbox3.value);
-      } 
-})
-checkbox4.addEventListener('change',function(){
-    if (this.checked) {
-        payInfo.push(checkbox4.value)
-        console.log(checkbox4.value);
-      } 
-})
+checkbox1.addEventListener("change", function () {
+  if (this.checked) {
+    payInfo.push(checkbox1.value);
+    console.log(checkbox1.value);
+  }
+});
+checkbox2.addEventListener("change", function () {
+  if (this.checked) {
+    payInfo.push(checkbox2.value);
+    console.log(checkbox2.value);
+  }
+});
+checkbox3.addEventListener("change", function () {
+  if (this.checked) {
+    payInfo.push(checkbox3.value);
+    console.log(checkbox3.value);
+  }
+});
+checkbox4.addEventListener("change", function () {
+  if (this.checked) {
+    payInfo.push(checkbox4.value);
+    console.log(checkbox4.value);
+  }
+});
 
 let currencyRateData = [];
 
@@ -85,10 +79,10 @@ function renderCountries(data) {
     fromCountries.append(optn);
   });
 }
-let originalAmount=null;
+let originalAmount = null;
 currency.addEventListener("submit", function (e) {
   e.preventDefault();
-  let inputRate = currencyRate(fromCountries.value);  
+  let inputRate = currencyRate(fromCountries.value);
   let outputRate = currencyRate(toCountries.value);
   let inputValue = currency.fromCurrency.value;
 
@@ -97,7 +91,7 @@ currency.addEventListener("submit", function (e) {
 
   //  let bankDetails=document.getElementById("bankDetails");
   //  bankDetails.Amount.value=toCurrency.value;
-  amount = toCurrency.value;  
+  // amount = toCurrency.value;
 });
 
 function currencyRate(a) {
@@ -109,21 +103,23 @@ function currencyRate(a) {
   });
   return value;
 }
-let nextPage=document.getElementById('nextPage');
-nextPage.addEventListener('click',function(){
-  let currencyName=toCountries.value;
-  let originalAmount=fromCurrency.value;
-    let obj={
-        userName,
-        recevierName,
-        currencyName,
-        amount,
-        originalAmount,
-        payInfo
-    }
-    console.log(obj)
-    universityData.push(obj);
-    localStorage.setItem('university-data',JSON.stringify(universityData))
-    // console.log()
-    window.location.href="universityPayment.html"
-})
+let nextPage = document.getElementById("nextPage");
+nextPage.addEventListener("click", function () {
+  let toCountry = toCountries.value;
+  let fromCountry = fromCountries.value;
+  let from_Currency = fromCurrency.value;
+  let to_Currency = toCurrency.value;
+  let obj = {
+    toCountry,
+    fromCountry,
+    from_Currency,
+    to_Currency,
+    recevierName,
+    payInfo,
+  };
+  console.log(obj);
+  universityData.push(obj);
+  localStorage.setItem("university-data", JSON.stringify(universityData));
+  // // console.log()
+  window.location.href = "universityPayment.html";
+});
