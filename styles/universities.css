@@ -4,7 +4,7 @@
 body {
   margin: 0px;
   font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
+  background-image: linear-gradient(to right top, #12476a, #22496a, #2d4b6b, #364e6b, #3e506b, #465a73, #4e647a, #576e82, #678392, #7a98a0, #90acaf, #a8c1bf);;
 }
 #nav{
   display: flex;
@@ -12,7 +12,7 @@ body {
   padding-top: 25px;
   padding-bottom: 15px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  background-image: linear-gradient(135deg, rgb(149, 20, 156), rgb(85, 80, 176), rgb(21, 53, 133));
+  background-color: rgb(16, 44, 65);
 }
 #nav li{
   list-style-type: none;
@@ -23,7 +23,7 @@ body {
   color: rgb(254, 253, 253);
 }
 #nav li>a:hover{
-  color: rgb(18, 18, 18);
+  color: rgb(175, 232, 251);
 }
 #nav > li > a > i{
   display: flex;
@@ -61,6 +61,10 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 10px;
+}
+.info{
+  color: white;
+  font-size: 22px;
 }
 .payments {
   /* border: 0.5px solid black; */

@@ -4,7 +4,7 @@
 body {
   margin: 0px;
   font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
+  background-image: linear-gradient(to right top, #12476a, #22496a, #2d4b6b, #364e6b, #3e506b, #465a73, #4e647a, #576e82, #678392, #7a98a0, #90acaf, #a8c1bf);;
 }
 #nav{
   display: flex;
@@ -12,7 +12,7 @@ body {
   padding-top: 25px;
   padding-bottom: 15px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  background-image: linear-gradient(135deg, rgb(149, 20, 156), rgb(85, 80, 176), rgb(21, 53, 133));
+  background-color: rgb(16, 44, 65);
 }
 #nav li{
   list-style-type: none;
@@ -23,7 +23,7 @@ body {
   color: rgb(254, 253, 253);
 }
 #nav li>a:hover{
-  color: rgb(18, 18, 18);
+  color: rgb(175, 232, 251);
 }
 #nav > li > a > i{
   display: flex;
@@ -42,10 +42,10 @@ body {
 #container {
   width: 95%;
   margin: auto;
-  margin-top: 20px;
-  /* border: 2px solid red; */
+  margin-top: 20px;  
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  margin-bottom: 30px;
 }
 #box2 {
   /*     display: none; */
@@ -53,6 +53,7 @@ body {
   margin: auto;
   padding: 20px;
   text-align: center;
+  background-color: white;
   box-shadow: rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
   border-radius: 30px;
 }
@@ -86,16 +87,30 @@ body {
 #submitBtn2:hover {
   background-color: green;
 }
-#box3 {
+/* #box3 {
   display: none;
   width: 80%;
   margin: auto;
-  /* border: 2px solid black; */
+  background-color: white;
+  box-shadow: rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  border-radius: 30px;
   padding-top: 40px;
   padding-bottom: 40px;
+} */
+#box3{
+  display: none;
+  width: 60%;
+  margin: auto;
+ /* text-align: center; */
+  /* border: 2px solid black; */
+  background-color: white;
+  padding: 30px;
+  margin-top: 33px;
+  border-radius: 30px;
+  margin-bottom: 50px;
 }
 #box3Header {
-  width: 22%;
+  width: 30%;
   margin: auto;
   padding: 1px;
   text-align: center;
